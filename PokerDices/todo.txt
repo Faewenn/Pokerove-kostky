@@ -1,8 +1,0 @@
-1. AI bot	
-DONE 2. soundtrack
-DONE 3. zvukové efekty
-DONE 4. ukládání a načítáí nastavení
-MAYBE NOT 5. více barevných schémat
-DONE 6. přepsat kód (zjednodušit)
-7. připojit na git
-MAYBE NOT 8. eng/cz
