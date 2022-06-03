@@ -21,7 +21,7 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
         # Window initialization
         self.setWindowTitle("Pokerove kostky")
         self.setFixedSize(1020, 600)
-        self.setWindowIcon(QtGui.QIcon("icon.png"))
+        self.setWindowIcon(QtGui.QIcon("imgs/icon.png"))
 
         try:
             loaded_settings = self.fn_loadSettings()
@@ -205,19 +205,19 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
         self.announcement.setGeometry(QtCore.QRect(10, 100, 1000, 50))
         self.announcement.setText("Vitejte ve hre Pokerove kostky!")
 
-        # Rámeèek hráèe 1
+        # R?me?ek hr??e 1
         self.frame_p1 = QtWidgets.QFrame(self)
         self.frame_p1.setGeometry(QtCore.QRect(10, 140, 500, 401))
         self.frame_p1.setFrameShape(QtWidgets.QFrame.Box)
         self.frame_p1.setFrameShadow(QtWidgets.QFrame.Raised)
 
-        # Rámeèek hráèe 2
+        # R?me?ek hr??e 2
         self.frame_p2 = QtWidgets.QFrame(self)
         self.frame_p2.setGeometry(QtCore.QRect(510, 140, 500, 401))
         self.frame_p2.setFrameShape(QtWidgets.QFrame.Box)
         self.frame_p2.setFrameShadow(QtWidgets.QFrame.Raised)
 
-        # Jméno hráèe 1
+        # Jm?no hr??e 1
         font = QtGui.QFont()
         font.setFamily("Lucida Sans Typewriter")
         font.setPointSize(20)
@@ -226,25 +226,25 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
         self.p1_labelName.setAlignment(QtCore.Qt.AlignCenter)
         self.p1_labelName.setText(loaded_settings["p1Name"]) if loaded_settings else self.p1_labelName.setText(loaded_settings["Player 1"])
 
-        # Jméno hráèe 2
+        # Jm?no hr??e 2
         self.p2_labelName = QtWidgets.QLabel(self.frame_p2, font=font)
         self.p2_labelName.setGeometry(QtCore.QRect(4, 5, 491, 61))
         self.p2_labelName.setAlignment(QtCore.Qt.AlignCenter)
         self.p2_labelName.setText("Computer")
 
-        # Síla ruky hráèe 1
+        # S?la ruky hr??e 1
         font = QtGui.QFont()
         font.setPointSize(12)
         self.p1_labelStrength = QtWidgets.QLabel(self.frame_p1, font=font)
         self.p1_labelStrength.setGeometry(QtCore.QRect(20, 210, 461, 31))
         self.p1_labelStrength.setText("Hand strength: ")
 
-        # Síla ruky hráèe 2
+        # S?la ruky hr??e 2
         self.p2_labelStrength = QtWidgets.QLabel(self.frame_p2, font=font)
         self.p2_labelStrength.setGeometry(QtCore.QRect(20, 210, 461, 31))
         self.p2_labelStrength.setText("Hand strength: ")
 
-        # Kostky hráèe 1
+        # Kostky hr??e 1
         # 1
         self.p1_d1 = QtWidgets.QPushButton(self.frame_p1)
         self.p1_d1.setGeometry(QtCore.QRect(20, 70, 80, 80))
@@ -285,7 +285,7 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
         self.p1_d5.setIconSize(QtCore.QSize(80, 80))
         self.p1_d5.setCheckable(True)
 
-        # Kostky hráèe 2
+        # Kostky hr??e 2
         # 1
         self.p2_d1 = QtWidgets.QPushButton(self.frame_p2)
         self.p2_d1.setGeometry(QtCore.QRect(20, 70, 80, 80))
@@ -326,7 +326,7 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
         self.p2_d5.setIconSize(QtCore.QSize(80, 80))
         self.p2_d5.setCheckable(True)
 
-        # Tlaèítko hráèe 1
+        # Tla??tko hr??e 1
         font = QtGui.QFont()
         font.setPointSize(12)
         self.p1_rollDices = QtWidgets.QPushButton(self.frame_p1, font=font)
@@ -334,13 +334,13 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
         self.p1_rollDices.setEnabled(False)
         self.p1_rollDices.setText("Hodit kostky")
 
-        # Tlaèítko hráèe 2
+        # Tla??tko hr??e 2
         self.p2_rollDices = QtWidgets.QPushButton(self.frame_p2, font=font)
         self.p2_rollDices.setGeometry(QtCore.QRect(10, 320, 481, 71))
         self.p2_rollDices.setEnabled(False)
         self.p2_rollDices.setText("Hodit kostky")
 
-        # Skóre
+        # Sk?re
         font = QtGui.QFont()
         font.setPointSize(16)
         font.setBold(True)
@@ -371,7 +371,7 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
         self.timer.start(100)
 
 
-        # Signály menu
+        # Sign?ly menu
         self.actionNewGame.triggered.connect(self.fn_newGame)
 
         self.actionZmenit_jmeno_hrace_1.triggered.connect(self.fn_p1_rename)
@@ -395,7 +395,7 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
         self.actionExit.triggered.connect(self.fn_exit)
 
 
-        # Signály tlaèítek
+        # Sign?ly tla??tek
         self.p1_rollDices.clicked.connect(self.fn_p1_rollDices)
         self.p2_rollDices.clicked.connect(self.fn_p2_rollDices)
 
@@ -413,7 +413,7 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
 
         self.show()
 
-    # Signál Nová hra
+    # Sign?l Nov? hra
     def fn_newGame(self):
         self.announcement.setText(f"Na rade je {self.p1_labelName.text()}")
         
@@ -456,14 +456,14 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
 
         self.fn_playSound1()
 
-    # Signál Hráè 1 háže kostkami
+    # Sign?l Hr?? 1 h?e kostkami
     def fn_p1_rollDices(self):
         self.fn_playSound1()
 
-        # Fáze Vymìòování kostek
+        # F?ze Vym??ov?n? kostek
         if self.p1_rolledDices:     
             
-            # Házení
+            # H?zen?
             if self.p1_d1.isChecked():
                 self.p1.roll_again(0)
             if self.p1_d2.isChecked():
@@ -475,11 +475,11 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
             if self.p1_d5.isChecked():
                 self.p1.roll_again(4)
 
-            # Oznámení
+            # Ozn?men?
             self.p1_labelStrength.setText(f"Hand strength: {self.p1.strength_name}")
             self.announcement.setText(f"Nove kostky hrace '{self.p1_labelName.text()}' jsou: {self.p1.dices[0]}, {self.p1.dices[1]}, {self.p1.dices[2]}, {self.p1.dices[3]} a {self.p1.dices[4]}. Nyni muze {self.p2_labelName.text()} znovu hodit kostkami dle jeho vyberu.")
             
-            # Dodateèné úpravy prostøedí
+            # Dodate?n? ?pravy prost?ed?
             self.p1_rollDices.setEnabled(False)
             self.p2_rollDices.setEnabled(True)
 
@@ -495,23 +495,23 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
             self.p1_d4.setEnabled(False)
             self.p1_d5.setEnabled(False)
         
-        # Fáze První hod kostek
+        # F?ze Prvn? hod kostek
         else:
 
-            # Házení
+            # H?zen?
             self.p1 = PokerDices.Player()
             
-            # Oznámení
+            # Ozn?men?
             self.p1_labelStrength.setText(f"Hand strength: {self.p1.strength_name}")
             self.announcement.setText(f"{self.p1_labelName.text()} hodil kostky {self.p1.dices[0]}, {self.p1.dices[1]}, {self.p1.dices[2]}, {self.p1.dices[3]} a {self.p1.dices[4]}. Na rade je {self.p2_labelName.text()}")
             self.p1_rollDices.setText("Hodit nove kostky")
 
-            # Dodateèné úpravy prostøedí
+            # Dodate?n? ?pravy prost?ed?
             self.p1_rolledDices = not self.p1_rolledDices
             self.p1_rollDices.setEnabled(False)
             self.p2_rollDices.setEnabled(True)
         
-        # Nastavení ikon kostek v prostøedí podle hozených kostek
+        # Nastaven? ikon kostek v prost?ed? podle hozen?ch kostek
         match self.p1.dices[0]:
             case 1:
                 self.p1_d1.setIcon(self.d1_icon_white)
@@ -582,18 +582,18 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
             case 6:
                 self.p1_d5.setIcon(self.d6_icon_white)
             
-    # Signál Hráè 2 háže kostkami
+    # Sign?l Hr?? 2 h?e kostkami
     def fn_p2_rollDices(self, kostky=[False, False, False, False, False]):
         self.fn_playSound1()
 
-        # Fáze Vymìòování kostek
+        # F?ze Vym??ov?n? kostek
         if self.p2_rolledDices:     
 
-            # Ošetøení vstupù
+            # O?et?en? vstup?
             if not isinstance(kostky, list):
                 kostky = [False, False, False, False, False]
 
-            # Házení
+            # H?zen?
             if self.p2_d1.isChecked() or kostky[0]:
                 self.p2.roll_again(0)
             if self.p2_d2.isChecked() or kostky[1]:
@@ -605,11 +605,11 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
             if self.p2_d5.isChecked() or kostky[4]:
                 self.p2.roll_again(4)
 
-            # Oznámení
+            # Ozn?men?
             self.announcement.setText(f"{self.p1_labelName.text()} hodil nove kostky!")
             self.p2_labelStrength.setText(f"Hand strength: {self.p2.strength_name}")
 
-            # Dodateèné úpravy prostøedí
+            # Dodate?n? ?pravy prost?ed?
             self.p2_rollDices.setEnabled(False)
             self.p2_d1.setEnabled(False)
             self.p2_d2.setEnabled(False)
@@ -620,18 +620,18 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
 
             self.fn_end_round()
 
-        # Fáze První hod kostek
+        # F?ze Prvn? hod kostek
         else:   
             
-            # Házení
+            # H?zen?
             self.p2 = PokerDices.Player()
 
-            # Oznámení
+            # Ozn?men?
             self.p2_labelStrength.setText(f"Hand strength: {self.p2.strength_name}")
             self.announcement.setText(f"{self.p2_labelName.text()} hodil kostky {self.p2.dices[0]}, {self.p2.dices[1]}, {self.p2.dices[2]}, {self.p2.dices[3]} a {self.p2.dices[4]}. {self.p1_labelName.text()} nyni muze znovu hodit kostkami dle jeho vyberu.")
             self.p2_rollDices.setText("Hodit nove kostky")
             
-            # Dodateèné úpravy prostøedí
+            # Dodate?n? ?pravy prost?ed?
             self.p2_rolledDices = not self.p2_rolledDices
 
             self.p2_rollDices.setEnabled(False)
@@ -643,7 +643,7 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
             self.p1_d4.setEnabled(True)
             self.p1_d5.setEnabled(True)
         
-        # Nastavení ikon kostek v prostøedí podle hozených kostek
+        # Nastaven? ikon kostek v prost?ed? podle hozen?ch kostek
         match self.p2.dices[0]:
             case 1:
                 self.p2_d1.setIcon(self.d1_icon_white)
@@ -714,7 +714,7 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
             case 6:
                 self.p2_d5.setIcon(self.d6_icon_white)
             
-    # Signály pøepínání barev kostek hráèe 1
+    # Sign?ly p?ep?n?n? barev kostek hr??e 1
     def fn_p1_d1(self):
         self.fn_playSound1()
 
@@ -800,7 +800,7 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
             case 6:     
                 self.p1_d5.setIcon(self.d6_icon_black) if self.p1_d5.isChecked() else self.p1_d5.setIcon(self.d6_icon_white)
 
-    # Signály pøepínání barev kostek hráèe 2
+    # Sign?ly p?ep?n?n? barev kostek hr??e 2
     def fn_p2_d1(self):
         self.fn_playSound1()
 
@@ -887,7 +887,7 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
                 self.p2_d5.setIcon(self.d6_icon_black) if self.p2_d5.isChecked() else self.p2_d5.setIcon(self.d6_icon_white)
 
     
-    # Funkce Vyhodnocení rundy
+    # Funkce Vyhodnocen? rundy
     def fn_end_round(self):
         if self.p1 > self.p2:
             winner = f"Vyhral {self.p1_labelName.text()}"
@@ -910,7 +910,7 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
         self.p1_rollDices.clicked.disconnect()
         self.p1_rollDices.clicked.connect(self.fn_newRound)
 
-    # Signál Nová runda
+    # Sign?l Nov? runda
     def fn_newRound(self):
         # Reset 
         self.p1_rolledDices, self.p2_rolledDices = False, False
@@ -940,29 +940,29 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
         self.p1_labelStrength.setText("Hand strength: ")
         self.p2_labelStrength.setText("Hand strength: ")
 
-        # Oznámení
+        # Ozn?men?
         self.announcement.setText(f"Zacala nova runda, haze {self.p1_labelName.text()}")
 
-        # Pøepnutí funkce tlaèítka p1_rollDices
+        # P?epnut? funkce tla??tka p1_rollDices
         self.p1_rollDices.clicked.disconnect()
         self.p1_rollDices.setText("Hodit kostky")
         self.p1_rollDices.clicked.connect(self.fn_p1_rollDices)
 
         self.fn_playSound1()
 
-    # Signál Pøejmenovat hráèe 1
+    # Sign?l P?ejmenovat hr??e 1
     def fn_p1_rename(self):
         string, ok = QtWidgets.QInputDialog.getText(QtWidgets.QDialog(), "Pokerove Kostky", "Zadejte nove jmeno hrace 1: ", QtWidgets.QLineEdit.Normal, "")
         if ok and string != '':
             self.p1_labelName.setText(string)
     
-    # Signál Pøejmenovat hráèe 2
+    # Sign?l P?ejmenovat hr??e 2
     def fn_p2_rename(self):
         string, ok = QtWidgets.QInputDialog.getText(QtWidgets.QDialog(), "Pokerove Kostky", "Zadejte nove jmeno hrace 2: ", QtWidgets.QLineEdit.Normal, "")
         if ok and string != '':
             self.p2_labelName.setText(string)
 
-    # Sinál Poèítaè je vybrán jako druhý hráè
+    # Sin?l Po??ta? je vybr?n jako druh? hr??
     def fn_computerCheck(self):
         if self.actionDruhy_hrac_je_pocitac.isChecked():
             self.menuDifficulty.setEnabled(True)
@@ -972,11 +972,11 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
             self.menuDifficulty.setEnabled(False)
             self.actionZmenit_jmeno_hrace_2.setEnabled(True)
 
-    # Signál Otevøít pravidla
+    # Sign?l Otev??t pravidla
     def fn_rules(self):
         webbrowser.open("http://localhost:5000/")
 
-    # Funke Poèítaè hraje/háže
+    # Funke Po??ta? hraje/h?e
     def fn_hraje_pocitac(self):
         if self.actionDruhy_hrac_je_pocitac.isChecked() and self.p2_rollDices.isEnabled():
             print("ted haze comp")
@@ -999,7 +999,7 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
                 else:  # Obitiznost = AI
                     pass
     
-    # Inteligence poèítaèe - obtížnost Normal
+    # Inteligence po??ta?e - obt?nost Normal
     def computer_normalDiffPlay(self):
         kostky=self.p2.get_strengthPositions()
         
@@ -1009,7 +1009,7 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
 
         return kostky
 
-    # Signál Pøepnutí obtížnosti
+    # Sign?l P?epnut? obt?nosti
     def fn_setDifficulty(self, diff):
         self.difficulty = diff
         print(f"Difficulty set to {self.difficulty}")
@@ -1019,7 +1019,7 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
         self.fn_saveSettings()
         QtWidgets.QApplication.quit()
         
-    # Funkce Uložit nastavení
+    # Funkce Ulo?it nastaven?
     def fn_saveSettings(self):
         print("saving...")
         settings = {"p1Name": self.p1_labelName.text(),
@@ -1031,17 +1031,17 @@ class PokerDicesGUI(QtWidgets.QMainWindow):
         with open('config', 'wb') as f:
             pickle.dump(settings, f, pickle.HIGHEST_PROTOCOL)
 
-    # Funkce Naèíst nastavení
+    # Funkce Na??st nastaven?
     def fn_loadSettings(self):
         with open('config', 'rb') as f:
             return pickle.load(f)
 
-    # Funkce Pøehrát zvuk
+    # Funkce P?ehr?t zvuk
     def fn_playSound1(self):
         if self.actionSound.isChecked(): 
             QtMultimedia.QSound.play('sounds/sound1.wav')
 
-    # Funkce Pøehrát musiku
+    # Funkce P?ehr?t musiku
     def fn_playMusic1(self):
         self.musicPlayer = QtMultimedia.QSound('sounds/music1.wav')
 
