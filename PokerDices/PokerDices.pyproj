@@ -1,0 +1,86 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>3328963a-d983-4bce-9eec-7f0f4a6ff764</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>main.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>PokerDices</Name>
+    <RootNamespace>PokerDices</RootNamespace>
+    <InterpreterId>CondaEnv|CondaEnv|PokerDices</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="main.py" />
+    <Compile Include="PokerDices.py" />
+    <Compile Include="PokerDicesGUI.py" />
+    <Compile Include="PokerDicesRules.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|PokerDices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="sounds\" />
+    <Folder Include="static\" />
+    <Folder Include="static\css\" />
+    <Folder Include="templates\" />
+    <Folder Include="templates\css\" />
+    <Folder Include="templates\fonts\" />
+    <Folder Include="static\images\" />
+    <Folder Include="static\images\gallery\" />
+    <Folder Include="static\images\reviews\" />
+    <Folder Include="static\images\slider\" />
+    <Folder Include="templates\js\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sounds\music1.wav" />
+    <Content Include="sounds\sound1.wav" />
+    <Content Include="static\css\bootstrap-icons.css" />
+    <Content Include="static\css\bootstrap.min.css" />
+    <Content Include="static\css\owl.carousel.min.css" />
+    <Content Include="static\css\owl.theme.default.min.css" />
+    <Content Include="static\css\templatemo-medic-care.css" />
+    <Content Include="templates\css\bootstrap-icons.css" />
+    <Content Include="templates\css\bootstrap.min.css" />
+    <Content Include="templates\css\owl.carousel.min.css" />
+    <Content Include="templates\css\owl.theme.default.min.css" />
+    <Content Include="templates\css\templatemo-medic-care.css" />
+    <Content Include="templates\fonts\bootstrap-icons.woff" />
+    <Content Include="templates\fonts\bootstrap-icons.woff2" />
+    <Content Include="static\images\gallery\female-doctor-with-presenting-hand-gesture.jpg" />
+    <Content Include="static\images\gallery\medium-shot-man-getting-vaccine.jpg" />
+    <Content Include="static\images\reviews\beautiful-woman-face-portrait-brown-background.jpeg" />
+    <Content Include="static\images\reviews\portrait-british-woman.jpeg" />
+    <Content Include="static\images\reviews\senior-man-wearing-white-face-mask-covid-19-campaign-with-design-space.jpeg" />
+    <Content Include="static\images\reviews\woman-wearing-mask-face-closeup-covid-19-green-background.jpeg" />
+    <Content Include="static\images\slider\doctor-s-hand-holding-stethoscope-closeup.jpg" />
+    <Content Include="static\images\slider\portrait-successful-mid-adult-doctor-with-crossed-arms.jpg" />
+    <Content Include="static\images\slider\young-asian-female-dentist-white-coat-posing-clinic-equipment.jpg" />
+    <Content Include="templates\index.html" />
+    <Content Include="templates\js\bootstrap.bundle.min.js" />
+    <Content Include="templates\js\custom.js" />
+    <Content Include="templates\js\jquery.min.js" />
+    <Content Include="templates\js\owl.carousel.min.js" />
+    <Content Include="templates\js\scrollspy.min.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
